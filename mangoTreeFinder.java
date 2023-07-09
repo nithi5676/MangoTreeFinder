@@ -10,26 +10,10 @@ class mangoTreeFinder {
         int column = scanner.nextInt();
         int find = scanner.nextInt();
         scanner.close();
-        int temp = column;
-        int multiply = row * column;
-        multiply -= column;
-        boolean check = false;
-        if (find <= column) {
-            check = true;
-        }
-        for (int j = 1; j < row; j++) {
-            temp += j;
-            if (temp == find) {
-                check = true;
-                break;
-            }
-            if (find > multiply && find <= multiply + column) {
-                check = true;
-            }
-        }
-        if (check) {
+        if(find >=1 && find<=row || find%column==0 || find%column==1){
             System.out.println("true");
-        } else {
+        }
+        else{
             System.out.println("false");
         }
     }
